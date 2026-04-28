@@ -108,7 +108,7 @@ class AdminController {
     const noOfPendingRequest = await HelpModel.countDocuments({
       status: "pending",
     });
-    return res.render("adminpanel/dashboard", {
+    return res.render("adminPanel/dashboard", {
       totalUsers,
       noOfInstructors,
       noOfStudents,
