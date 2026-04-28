@@ -29,17 +29,20 @@ class PdfController {
         noOfCourses,
         noOfSubjects,
         noOfEnrollments,
-        noOfPendingRequest
-      }
+        noOfPendingRequest,
+      },
     );
 
-    const browser = await puppeter.launch();
+    const browser = await puppeter.launch({
+      headless: true,
+      args: ["--no-sandbox", "--disable-dev-shm-usage"],
+    });
     const page = await browser.newPage();
 
     // Load the HTML content
     await page.setContent(html);
     const pdfBuffer = await page.pdf({
-        format: "A4"
+      format: "A4",
     });
 
     await browser.close();
@@ -47,6 +50,5 @@ class PdfController {
     res.send(pdfBuffer);
   }
 }
-
 
 module.exports = new PdfController();
