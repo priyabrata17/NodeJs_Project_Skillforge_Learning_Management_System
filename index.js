@@ -109,7 +109,7 @@ const handlingErrors = require("./app/middleware/HandlingErrors");
 app.use(handlingErrors);
 
 //+++++++++++++++++  Creating Server  ++++++++++++++++++++++
-const port = 8080;
+const port = process.env.PORT || 8080;
 server.listen(port, () => {
   console.log(`Server started at ${port}`);
 });
