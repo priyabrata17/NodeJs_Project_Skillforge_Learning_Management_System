@@ -34,6 +34,7 @@ class PdfController {
     );
 
     const browser = await puppeter.launch({
+      executablePath: puppeteer.executablePath(),
       headless: true,
       args: ["--no-sandbox", "--disable-dev-shm-usage"],
     });
