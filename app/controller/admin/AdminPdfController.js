@@ -3,7 +3,7 @@ const CourseModel = require("../../model/CourseModel");
 const SubjectModel = require("../../model/SubjectsModel");
 const EnrollmentModel = require("../../model/EnrollmentModel");
 const HelpModel = require("../../model/HelpModel");
-const puppeter = require("puppeteer");
+const puppeteer = require("puppeteer");
 const path = require("path");
 const ejs = require("ejs");
 
@@ -33,7 +33,7 @@ class PdfController {
       },
     );
 
-    const browser = await puppeter.launch({
+    const browser = await puppeteer.launch({
       executablePath: puppeteer.executablePath(),
       headless: true,
       args: ["--no-sandbox", "--disable-dev-shm-usage"],
